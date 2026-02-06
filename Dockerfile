@@ -2,8 +2,8 @@ FROM n8nio/n8n:latest
 
 USER root
 
-# Install ffmpeg binary 
-RUN apk update && apk add --no-cache ffmpeg
+# Install ffmpeg binary
+RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
 
 # Install n8n-nodes-ffmpeg as a community node
 RUN mkdir -p /home/node/.n8n/nodes && \
